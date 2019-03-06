@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BtnWrapper } from '../style'
 import { connect } from 'react-redux'
-import * as actionCreators from '../store/actionCreator'
+import * as actionCreators from ''
 
 const KEYNUM = ['clear', '<--', '/', 7, 8, 9, '*', 4, 5, 6, '-', 1, 2, 3, '+', 0, '.', '='];
 

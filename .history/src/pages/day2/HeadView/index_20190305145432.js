@@ -16,7 +16,7 @@ class Input extends Component {
 }
 const mapStateProps = (state) => {
     return {
-        value: state.day2.get('value')
+        value: state.get('value')
     }
 }
 
