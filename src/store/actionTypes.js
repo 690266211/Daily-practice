@@ -1,0 +1,5 @@
+export const CLICK_NUM  = 'CLICK_NUM'
+export const CLEAR_NUM  = 'CLEAR_NUM'
+export const ADD_DECIMALS  = 'ADD_DECIMALS'
+export const BREAK_UP  = 'BREAK_UP'
+export const OPERATOR  = 'OPERATOR'
