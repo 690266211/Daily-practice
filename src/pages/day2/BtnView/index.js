@@ -12,6 +12,13 @@ class BtnView extends Component {
         }
     }
 
+    componentDidMount() {
+        document.addEventListener("keydown", (e) => {
+            let value = isNaN(Number(e.key)) ? e.key : Number(e.key);
+            this.props.clickBtn(value);
+        })
+    }
+
     render() {
         return (
             <BtnWrapper>
@@ -37,10 +44,10 @@ const mapDispacth = (dispatch) => ({
         if(value === '.') {
             dispatch(actionCreators.addDecimals())
         }
-        if(value === '<--') {
+        if(value === '<--' || value === 'Backspace') {
             dispatch(actionCreators.breakUp())
         }
-        if(value === '+' || value === '-' || value === '*' || value === '/' || value === '=') {
+        if(value === '+' || value === '-' || value === '*' || value === '/' || value === '=' || value === 'Enter') {
             dispatch(actionCreators.operator(value))
         }
     },

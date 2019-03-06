@@ -11,7 +11,7 @@ const defaultState = fromJS({
 const changeVlaue = (state, action) => {
     let defaultValue = state.get('value');
     let operator = state.get('operator');
-    if(operator === '=') {
+    if(operator === '=' || operator === 'Enter') {
         return state.merge({
             'value': action.value,
             'proValue': null,
@@ -110,10 +110,10 @@ const operator = (state, action) => {
     if(operator != null) {
         let defaultValue = state.get('value');
         let proValue = state.get('proValue');
-        if(operator === '=' && action.operator === '=') {
+        if((operator === '=' && action.operator === '=') || (operator === 'Enter' && action.operator === 'Enter')) {
             return state;
         }
-        if(operator !== action.operator && action.operator !== '=') {
+        if(operator !== action.operator && action.operator !== '=' && action.operator !== 'Enter') {
             return state.merge({
                 'operator': action.operator
             })
